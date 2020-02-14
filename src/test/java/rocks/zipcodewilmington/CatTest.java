@@ -40,4 +40,104 @@ public class CatTest {
         Assert.assertEquals(givenId, retrievedId);
     }
 
+    // Name Tests
+
+    @Test
+    public void testSetName() {
+        String giveNewName = "Luna";
+        Date giveNewDate = new Date();
+        Integer giveNewId = 0;
+
+        Cat newCat = new Cat(giveNewName,giveNewDate,giveNewId);
+
+        String setNewName = "Meghan";
+        newCat.setName(setNewName);
+        String retrieveNewName = newCat.getName();
+
+        Assert.assertEquals(setNewName,retrieveNewName);
+
+    }
+
+
+    @Test
+    public void testSetNameFalse() {
+        String giveNewName = "Luna";
+        Date giveNewDate = new Date();
+        Integer giveNewId = 0;
+
+        Cat newCat = new Cat(giveNewName,giveNewDate,giveNewId);
+
+        String setNewName = "Meghan";
+        newCat.setName(setNewName);
+        String retrieveNewName = newCat.getName();
+
+        Assert.assertNotEquals(giveNewName,retrieveNewName);
+
+    }
+
+    //Speak Tests
+
+    @Test
+    public void testSpeak() {
+        String giveNewName = "Luna";
+        Date giveNewDate = new Date();
+        Integer giveNewId = 0;
+
+        Cat newCat = new Cat(giveNewName,giveNewDate,giveNewId);
+        String expected = "meow!";
+        String actual = newCat.speak();
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testSpeakFalse() {
+        String giveNewName = "Luna";
+        Date giveNewDate = new Date();
+        Integer giveNewId = 0;
+
+        Cat newCat = new Cat(giveNewName,giveNewDate,giveNewId);
+        String expected = "woof!";
+        String actual = newCat.speak();
+
+        Assert.assertNotEquals(expected,actual);
+    }
+
+    //BirthDate Tests
+
+    @Test
+    public void testSetDate() {
+        String giveNewName = "Luna";
+        Date giveNewDate = new Date();
+        Integer giveNewId = 0;
+
+        Cat testCat = new Cat(giveNewName,giveNewDate,giveNewId);
+
+        Date expected = new Date(02142020);
+        testCat.setBirthDate(expected);
+        Date actual = testCat.getBirthDate();
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testSetDateFalse() {
+        String giveNewName = "Luna";
+        Date giveNewDate = new Date();
+        Integer giveNewId = 0;
+
+        Cat testCat = new Cat(giveNewName,giveNewDate,giveNewId);
+
+        Date expected = new Date(02142020);
+        testCat.setBirthDate(expected);
+        Date actual = testCat.getBirthDate();
+
+        Assert.assertNotEquals(giveNewDate,actual);
+    }
+
+
+
+
+
+
 }
