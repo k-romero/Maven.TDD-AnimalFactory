@@ -2,7 +2,9 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Dog;
+import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
 
@@ -72,4 +74,80 @@ public class DogTest {
         Date actual = testDog.getBirthDate();
         Assert.assertNotEquals(expected,actual);
     }
+
+    //Speak Tests
+
+    @Test
+    public  void speakTest() {
+        Dog testDog = new Dog(null, null,null);
+        String expected = "bark!";
+        String actual = testDog.speak();
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public  void speakTestFalse() {
+        Dog testDog = new Dog(null, null,null);
+        String expected = "woof!";
+        String actual = testDog.speak();
+        Assert.assertNotEquals(expected,actual);
+    }
+
+    //Eat Tests
+
+    @Test
+    public  void eatTest() {
+        Dog testDog = new Dog(null, null,null);
+        Food chow = new Food();
+        testDog.eat(chow);
+        int expected = 1;
+        int actual = testDog.getNumberOfMealsEaten();
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public  void eatTestFalse() {
+        Dog testDog = new Dog(null, null,null);
+        Food chow = new Food();
+        testDog.eat(chow);
+        testDog.eat(chow);
+        testDog.eat(chow);
+        int expected = 1;
+        int actual = testDog.getNumberOfMealsEaten();
+        Assert.assertNotEquals(expected,actual);
+    }
+
+    //ID Tests
+
+    @Test
+    public void idTest() {
+        Dog testDog = new Dog(null, null,17);
+        int expected = 17;
+        int actual = testDog.getId();
+        Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test
+    public void idTestFalse() {
+        Dog testDog = new Dog(null, null,988);
+        int expected = 17;
+        int actual = testDog.getId();
+        Assert.assertNotEquals(expected,actual);
+    }
+
+    //Inheritance Tests
+
+    @Test
+    public void inheritanceTest() {
+        Dog testDog = new Dog(null, null,null);
+        Assert.assertTrue(testDog instanceof Animal);
+    }
+
+    @Test
+    public void inheritanceTest2() {
+        Dog testDog = new Dog(null, null,null);
+        Assert.assertTrue(testDog instanceof Mammal);
+    }
+
 }
