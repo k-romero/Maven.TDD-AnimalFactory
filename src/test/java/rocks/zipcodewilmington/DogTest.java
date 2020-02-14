@@ -125,7 +125,6 @@ public class DogTest {
         int expected = 17;
         int actual = testDog.getId();
         Assert.assertEquals(expected,actual);
-
     }
 
     @Test
