@@ -36,7 +36,7 @@ public class CatHouseTest {
         int actual = catShop.getNumberOfCats();
 
         Assert.assertEquals(expected,actual);
-
+        CatHouse.clear();
     }
 
     @Test
@@ -52,7 +52,7 @@ public class CatHouseTest {
         int actual = catShop.getNumberOfCats();
 
         Assert.assertNotEquals(expected,actual);
-
+        CatHouse.clear();
     }
 
     //Remove Cat By CatObj
@@ -69,6 +69,7 @@ public class CatHouseTest {
         int actual = CatHouse.getNumberOfCats();
 
         Assert.assertEquals(expected, actual);
+        CatHouse.clear();
     }
 
     @Test
@@ -86,6 +87,7 @@ public class CatHouseTest {
         int actual = CatHouse.getNumberOfCats();
 
         Assert.assertNotEquals(expected, actual);
+        CatHouse.clear();
     }
 
     //Remove Cat By ID
@@ -102,6 +104,7 @@ public class CatHouseTest {
         int expected = 1;
         int actual = CatHouse.getNumberOfCats();
         Assert.assertEquals(expected,actual);
+        CatHouse.clear();
     }
 
     //Get Cat by ID
@@ -117,6 +120,7 @@ public class CatHouseTest {
         Cat expected = cat1;
         Cat actual = CatHouse.getCatById(yaDead);
         Assert.assertEquals(expected,actual);
+        CatHouse.clear();
     }
 
     @Test
@@ -132,6 +136,7 @@ public class CatHouseTest {
         Cat actual = CatHouse.getCatById(yaDead);
 
         Assert.assertNotEquals(expected, actual);
+        CatHouse.clear();
     }
 
     //Get Number of Cats Tests
@@ -145,6 +150,7 @@ public class CatHouseTest {
         int expected = 1;
         int actual = CatHouse.getNumberOfCats();
         Assert.assertEquals(expected,actual);
+        CatHouse.clear();
     }
 
 
