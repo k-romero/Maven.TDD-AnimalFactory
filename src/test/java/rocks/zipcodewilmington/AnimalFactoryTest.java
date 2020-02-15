@@ -29,6 +29,8 @@ public class AnimalFactoryTest {
 
     }
 
+    //Create Cat Test
+
     @Test
     public void createCatTest() {
         String expected = "Whiskers";
@@ -44,5 +46,5 @@ public class AnimalFactoryTest {
 
 
 
-    //Create Cat Test
+
 }
